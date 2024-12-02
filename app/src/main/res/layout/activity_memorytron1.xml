@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Memorytron1"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/textoSuperior"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Memory Tron"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineh1"
+        app:layout_constraintVertical_weight="1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineh1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineh2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen00"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guidelineh1"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintEnd_toStartOf="@id/imagen01"
+        app:layout_constraintBottom_toTopOf="@id/imagen10"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen01"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guidelineh1"
+        app:layout_constraintStart_toEndOf="@id/imagen00"
+        app:layout_constraintEnd_toStartOf="@id/imagen02"
+        app:layout_constraintBottom_toTopOf="@id/imagen11"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen02"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guidelineh1"
+        app:layout_constraintStart_toEndOf="@id/imagen01"
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintBottom_toTopOf="@id/imagen12"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen00"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintEnd_toStartOf="@id/imagen11"
+        app:layout_constraintBottom_toTopOf="@id/imagen20"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen01"
+        app:layout_constraintStart_toEndOf="@id/imagen10"
+        app:layout_constraintEnd_toStartOf="@id/imagen12"
+        app:layout_constraintBottom_toTopOf="@id/imagen21"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen02"
+        app:layout_constraintStart_toEndOf="@id/imagen11"
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintBottom_toTopOf="@id/imagen22"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen20"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen10"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintEnd_toStartOf="@id/imagen21"
+        app:layout_constraintBottom_toTopOf="@id/imagen30"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen21"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen11"
+        app:layout_constraintStart_toEndOf="@id/imagen20"
+        app:layout_constraintEnd_toStartOf="@id/imagen22"
+        app:layout_constraintBottom_toTopOf="@id/imagen31"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen22"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen12"
+        app:layout_constraintStart_toEndOf="@id/imagen21"
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintBottom_toTopOf="@id/imagen32"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen30"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen20"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintEnd_toStartOf="@id/imagen31"
+        app:layout_constraintBottom_toTopOf="@id/guidelineh2"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen31"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen21"
+        app:layout_constraintStart_toEndOf="@id/imagen30"
+        app:layout_constraintEnd_toStartOf="@id/imagen32"
+        app:layout_constraintBottom_toTopOf="@id/guidelineh2"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagen32"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/imagen22"
+        app:layout_constraintStart_toEndOf="@id/imagen31"
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintBottom_toTopOf="@id/guidelineh2"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anotaci_n_2024_12_02_180644"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
