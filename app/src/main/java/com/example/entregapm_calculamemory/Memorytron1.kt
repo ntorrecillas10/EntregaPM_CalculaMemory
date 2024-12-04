@@ -1,11 +1,8 @@
 package com.example.entregapm_calculamemory
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class Memorytron1 : AppCompatActivity() {
     private lateinit var boton0: AppCompatImageButton
@@ -20,6 +17,8 @@ class Memorytron1 : AppCompatActivity() {
     private lateinit var boton9: AppCompatImageButton
     private lateinit var boton10: AppCompatImageButton
     private lateinit var boton11: AppCompatImageButton
+    private lateinit var botonVolver: AppCompatImageButton
+    private lateinit var botonJugarDeNuevo: AppCompatImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +38,8 @@ class Memorytron1 : AppCompatActivity() {
         boton9 = findViewById(R.id.imagen30)
         boton10 = findViewById(R.id.imagen31)
         boton11 = findViewById(R.id.imagen32)
+        botonVolver = findViewById(R.id.volver)
+        botonJugarDeNuevo = findViewById(R.id.jugarDeNuevo)
 
         //Guardamos los valores de las cartas en un array
         val cartasValues = arrayOf(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5)
@@ -56,7 +57,7 @@ class Memorytron1 : AppCompatActivity() {
         val valorboton10 = cartasValues[10]
         val valorboton11 = cartasValues[11]
 
-        val cartaDefecto = R.drawable.anotaci_n_2024_12_02_180644
+        val cartaDefecto = R.drawable.carta_dorso
         val cartabatman = R.drawable.carta1_batman
         var cartasEnPulsacion = mutableListOf<Int>()
         var cartasAcertadas = mutableListOf<Int>()
@@ -77,7 +78,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasEnPulsacion.clear()
 
                 } else {
-                    boton0.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton0.setImageResource(R.drawable.carta_dorso)
                     boton0.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -98,7 +99,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasEnPulsacion.clear()
 
                 } else {
-                    boton1.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton1.setImageResource(R.drawable.carta_dorso)
                     boton1.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -119,7 +120,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasEnPulsacion.clear()
 
                 } else {
-                    boton2.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton2.setImageResource(R.drawable.carta_dorso)
                     boton2.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -140,7 +141,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasEnPulsacion.clear()
 
                 } else {
-                    boton3.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton3.setImageResource(R.drawable.carta_dorso)
                     boton3.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -160,7 +161,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 }else{
-                    boton4.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton4.setImageResource(R.drawable.carta_dorso)
                     boton4.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -180,7 +181,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 } else {
-                    boton5.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton5.setImageResource(R.drawable.carta_dorso)
                     boton5.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -200,7 +201,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 }else{
-                    boton6.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton6.setImageResource(R.drawable.carta_dorso)
                     boton6.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -220,7 +221,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 } else {
-                    boton7.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton7.setImageResource(R.drawable.carta_dorso)
                     boton7.isEnabled = true
                     cartasEnPulsacion.clear()
 
@@ -241,7 +242,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 } else {
-                    boton8.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton8.setImageResource(R.drawable.carta_dorso)
                     boton8.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -261,7 +262,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 } else {
-                    boton9.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton9.setImageResource(R.drawable.carta_dorso)
                     boton9.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -281,7 +282,7 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
             }else{
-                    boton10.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton10.setImageResource(R.drawable.carta_dorso)
                     boton10.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
@@ -301,11 +302,17 @@ class Memorytron1 : AppCompatActivity() {
                     cartasAcertadas.add(cartasEnPulsacion[1])
                     cartasEnPulsacion.clear()
                 }else{
-                    boton11.setImageResource(R.drawable.anotaci_n_2024_12_02_180644)
+                    boton11.setImageResource(R.drawable.carta_dorso)
                     boton11.isEnabled = true
                     cartasEnPulsacion.clear()
                 }
             }
+        }
+        botonVolver.setOnClickListener {
+            finish()
+        }
+        botonJugarDeNuevo.setOnClickListener {
+            recreate()
         }
     }
 }
