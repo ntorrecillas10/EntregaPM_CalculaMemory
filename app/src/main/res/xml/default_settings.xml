@@ -1,0 +1,9 @@
+<resources>
+    <integer name="default_duration">20</integer>
+    <bool name="default_animations">false</bool>
+    <string-array name="default_operators">
+        <item>+</item>
+        <item>-</item>
+    </string-array>
+    <integer name="default_max_value">10</integer>
+</resources>

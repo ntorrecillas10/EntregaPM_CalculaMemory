@@ -2,11 +2,8 @@ package com.example.entregapm_calculamemory
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         botonCalcula.setOnClickListener {
-            val intent = Intent(this, Caculatron1::class.java)
+            val intent = Intent(this, Config_CalculaTron::class.java)
             startActivity(intent)
         }
 

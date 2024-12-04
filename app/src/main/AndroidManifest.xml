@@ -13,7 +13,10 @@
         android:theme="@style/Theme.EntregaPM_CalculaMemory"
         tools:targetApi="31">
         <activity
-            android:name=".Caculatron1"
+            android:name=".Resume_CalculaTron"
+            android:exported="false" />
+        <activity
+            android:name=".Config_CalculaTron"
             android:exported="false" />
         <activity
             android:name=".Memorytron1"
