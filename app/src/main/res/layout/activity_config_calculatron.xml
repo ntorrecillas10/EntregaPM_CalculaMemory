@@ -98,7 +98,7 @@
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toTopOf="@id/guidelineh1"
         app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
-        app:layout_constraintHorizontal_weight="8"/>
+        app:layout_constraintVertical_weight="1"/>
 
 
 
@@ -117,7 +117,8 @@
         app:layout_constraintStart_toEndOf="@id/guidelinev1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintTop_toBottomOf="@id/textoConfig"
-        app:layout_constraintBottom_toTopOf="@id/minimoEdit"/>
+        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
+        app:layout_constraintVertical_weight="2"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/minimoEdit"
@@ -134,7 +135,8 @@
         app:layout_constraintStart_toEndOf="@id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/cuentaAtras"
         app:layout_constraintEnd_toStartOf="@id/maximoEdit"
-        app:layout_constraintBottom_toTopOf="@id/textoOperaciones"/>
+        app:layout_constraintBottom_toTopOf="@id/textoOperaciones"
+        app:layout_constraintVertical_weight="2"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/maximoEdit"
@@ -157,13 +159,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="Operaciones seleccionadas"
-        android:layout_marginTop="10dp"
         android:textSize="15dp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
-        app:layout_constraintTop_toBottomOf="@id/maximoEdit"
-        app:layout_constraintBottom_toBottomOf="@id/checkSuma"/>
+        app:layout_constraintTop_toBottomOf="@id/minimoEdit"
+        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
+        app:layout_constraintVertical_weight="1"/>
 
     <CheckBox
         android:id="@+id/checkSuma"
@@ -175,7 +177,8 @@
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
         app:layout_constraintEnd_toStartOf="@id/checkResta"
-        app:layout_constraintBottom_toTopOf="@id/textoAnimaciones"/>
+        app:layout_constraintBottom_toTopOf="@id/textoAnimaciones"
+        app:layout_constraintVertical_weight="1"/>
 
     <CheckBox
         android:id="@+id/checkResta"
@@ -187,7 +190,8 @@
         app:layout_constraintStart_toEndOf="@id/checkSuma"
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
         app:layout_constraintEnd_toStartOf="@id/checkMultiplicacion"
-        app:layout_constraintBottom_toBottomOf="@id/checkSuma"/>
+        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
+        app:layout_constraintVertical_weight="1"/>
 
     <CheckBox
         android:id="@+id/checkMultiplicacion"
@@ -199,7 +203,8 @@
         app:layout_constraintStart_toEndOf="@id/checkResta"
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
-        app:layout_constraintBottom_toBottomOf="@id/checkSuma"/>
+        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
+        app:layout_constraintVertical_weight="1"/>
 
     <TextView
         android:id="@+id/textoAnimaciones"
@@ -212,7 +217,8 @@
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/checkSuma"
-        app:layout_constraintBottom_toTopOf="@id/spinnerAnimaciones"/>
+        app:layout_constraintBottom_toTopOf="@id/spinnerAnimaciones"
+        app:layout_constraintVertical_weight="1"/>
 
     <Spinner
         android:id="@+id/spinnerAnimaciones"
@@ -226,6 +232,7 @@
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineMedio"
+        app:layout_constraintVertical_weight="1"
         />
 
 
