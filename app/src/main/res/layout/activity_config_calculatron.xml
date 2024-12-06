@@ -235,6 +235,18 @@
         app:layout_constraintVertical_weight="1"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/guardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineh2"
+        app:layout_constraintStart_toEndOf="@id/guidelinev1"
+        app:layout_constraintEnd_toStartOf="@id/guidelinev2"
+        android:text="Guardar configuración"
+        android:background="@drawable/bordesblancos_redondo"
+        android:textColor="@color/white"
+        />
+
 
 
 

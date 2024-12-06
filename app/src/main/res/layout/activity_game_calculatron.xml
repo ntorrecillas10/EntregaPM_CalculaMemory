@@ -96,7 +96,7 @@
         app:layout_constraintTop_toTopOf="@id/guidelineh1" />
 
     <TextView
-        android:id="@+id/Cuenta_atras_gameCalc"
+        android:id="@+id/cuentaAtrasgc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="60"
@@ -120,18 +120,18 @@
         app:layout_constraintTop_toTopOf="@id/guidelineh1" />
 
     <TextView
-        android:id="@+id/resultado_anterior"
+        android:id="@+id/resultadoAnterior"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textColor="@color/white"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintTop_toBottomOf="@id/Cuenta_atras_gameCalc"
-        app:layout_constraintBottom_toTopOf="@id/resultado_actual"/>
+        app:layout_constraintTop_toBottomOf="@id/cuentaAtrasgc"
+        app:layout_constraintBottom_toTopOf="@id/operacionActual"/>
 
     <TextView
-        android:id="@+id/resultado_actual"
+        android:id="@+id/operacionActual"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="2"
@@ -139,166 +139,218 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintTop_toBottomOf="@id/resultado_anterior"
-        app:layout_constraintBottom_toTopOf="@id/resultado_siguiente"/>
+        app:layout_constraintTop_toBottomOf="@id/resultadoAnterior"
+        app:layout_constraintBottom_toTopOf="@id/resultadoSiguiente"/>
 
     <TextView
-        android:id="@+id/resultado_siguiente"
+        android:id="@+id/resultadoSiguiente"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textColor="@color/white"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintTop_toBottomOf="@id/resultado_actual"
+        app:layout_constraintTop_toBottomOf="@id/operacionActual"
         app:layout_constraintBottom_toTopOf="@id/guidelinemedio"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num7"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum7"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="7"
+        android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintTop_toBottomOf="@id/guidelinemedio"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintEnd_toStartOf="@id/boton_num8"
-        app:layout_constraintBottom_toTopOf="@id/boton_num4"
+        app:layout_constraintEnd_toStartOf="@id/botonNum8"
+        app:layout_constraintBottom_toTopOf="@id/botonNum4"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num8"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum8"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="8"
+        android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintTop_toBottomOf="@id/guidelinemedio"
-        app:layout_constraintStart_toEndOf="@id/boton_num7"
-        app:layout_constraintEnd_toStartOf="@id/boton_num9"
-        app:layout_constraintBottom_toTopOf="@id/boton_num5"
+        app:layout_constraintStart_toEndOf="@id/botonNum7"
+        app:layout_constraintEnd_toStartOf="@id/botonNum9"
+        app:layout_constraintBottom_toTopOf="@id/botonNum5"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num9"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum9"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="9"
+        android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintTop_toBottomOf="@id/guidelinemedio"
-        app:layout_constraintStart_toEndOf="@id/boton_num8"
-        app:layout_constraintEnd_toStartOf="@id/boton_reinicar_operacion"
-        app:layout_constraintBottom_toTopOf="@id/boton_num6"
+        app:layout_constraintStart_toEndOf="@id/botonNum8"
+        app:layout_constraintEnd_toStartOf="@id/botonReinicarOperacion"
+        app:layout_constraintBottom_toTopOf="@id/botonNum6"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_reinicar_operacion"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonReinicarOperacion"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="CE"
+        android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintTop_toBottomOf="@id/guidelinemedio"
-        app:layout_constraintStart_toEndOf="@id/boton_num9"
+        app:layout_constraintStart_toEndOf="@id/botonNum9"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
-        app:layout_constraintBottom_toTopOf="@id/boton_igual"
+        app:layout_constraintBottom_toBottomOf="@id/botonNum9"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num4"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_num7"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintTop_toBottomOf="@id/botonNum7"
         app:layout_constraintStart_toEndOf="@id/guidelinev1"
-        app:layout_constraintEnd_toStartOf="@id/boton_num5"
-        app:layout_constraintBottom_toTopOf="@id/boton_num1"
+        app:layout_constraintEnd_toStartOf="@id/botonNum5"
+        app:layout_constraintBottom_toTopOf="@id/botonNum1"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num5"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_num8"
-        app:layout_constraintStart_toEndOf="@id/boton_num4"
-        app:layout_constraintEnd_toStartOf="@id/boton_num6"
-        app:layout_constraintBottom_toTopOf="@id/boton_num2"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintTop_toBottomOf="@id/botonNum8"
+        app:layout_constraintStart_toEndOf="@id/botonNum4"
+        app:layout_constraintEnd_toStartOf="@id/botonNum6"
+        app:layout_constraintBottom_toTopOf="@id/botonNum2"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num6"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_num9"
-        app:layout_constraintStart_toEndOf="@id/boton_num5"
-        app:layout_constraintEnd_toStartOf="@id/boton_igual"
-        app:layout_constraintBottom_toTopOf="@id/boton_num3"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintTop_toBottomOf="@id/botonNum9"
+        app:layout_constraintStart_toEndOf="@id/botonNum5"
+        app:layout_constraintEnd_toStartOf="@id/botonIgual"
+        app:layout_constraintBottom_toTopOf="@id/botonNum3"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_igual"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonIgual"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_reinicar_operacion"
-        app:layout_constraintStart_toEndOf="@id/boton_num6"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="="
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintTop_toBottomOf="@id/botonReinicarOperacion"
+        app:layout_constraintStart_toEndOf="@id/botonNum6"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
-        app:layout_constraintBottom_toTopOf="guidelineh2"
+        app:layout_constraintBottom_toBottomOf="@id/botonEliminarUltimoDigito"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num1"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_num4"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintTop_toBottomOf="@id/botonNum4"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintEnd_toStartOf="@id/boton_num2"
-        app:layout_constraintBottom_toTopOf="@id/boton_num0"
+        app:layout_constraintEnd_toStartOf="@id/botonNum2"
+        app:layout_constraintBottom_toTopOf="@id/botonNum0"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num2"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="2"
+        android:textColor="@color/white"
+        android:textSize="40dp"
 
-        app:layout_constraintTop_toBottomOf="@id/boton_num5"
-        app:layout_constraintStart_toEndOf="@id/boton_num1"
-        app:layout_constraintEnd_toStartOf="@id/boton_num3"
-        app:layout_constraintBottom_toTopOf="@id/boton_num0"
+        app:layout_constraintTop_toBottomOf="@id/botonNum5"
+        app:layout_constraintStart_toEndOf="@id/botonNum1"
+        app:layout_constraintEnd_toStartOf="@id/botonNum3"
+        app:layout_constraintBottom_toTopOf="@id/botonNum0"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num3"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="40dp"
 
-        app:layout_constraintTop_toBottomOf="@+id/boton_num6"
-        app:layout_constraintStart_toEndOf="@id/boton_num2"
-        app:layout_constraintEnd_toStartOf="@+id/boton_igual"
-        app:layout_constraintBottom_toTopOf="@id/eliminar_ultimo_digito"
+        app:layout_constraintTop_toBottomOf="@+id/botonNum6"
+        app:layout_constraintStart_toEndOf="@id/botonNum2"
+        app:layout_constraintEnd_toStartOf="@+id/botonIgual"
+        app:layout_constraintBottom_toTopOf="@id/botonEliminarUltimoDigito"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/boton_num0"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonNum0"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="40dp"
 
-        app:layout_constraintTop_toBottomOf="@+id/boton_num1"
+        app:layout_constraintTop_toBottomOf="@+id/botonNum1"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintEnd_toStartOf="@id/eliminar_ultimo_digito"
+        app:layout_constraintEnd_toStartOf="@id/botonEliminarUltimoDigito"
         app:layout_constraintBottom_toBottomOf="@id/guidelineh2"
         app:layout_constraintVertical_weight="1"
-        app:layout_constraintHorizontal_weight="1"/>
+        app:layout_constraintHorizontal_weight="2"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/eliminar_ultimo_digito"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonEliminarUltimoDigito"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        app:layout_constraintTop_toBottomOf="@id/boton_num3"
-        app:layout_constraintStart_toEndOf="@id/boton_num0"
-        app:layout_constraintEnd_toStartOf="@id/boton_igual"
+        app:layout_constraintTop_toBottomOf="@id/botonNum3"
+        app:layout_constraintStart_toEndOf="@id/botonNum0"
+        app:layout_constraintEnd_toStartOf="@id/botonIgual"
         app:layout_constraintBottom_toBottomOf="@id/guidelineh2"
+        android:background="@drawable/bordesblancos_redondo"
+        android:text="C"
+        android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"/>
 

@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EntregaPM_CalculaMemory"
         tools:targetApi="31">
+        <activity android:name=".Game_Calculatron"
+            android:exported="false" />
         <activity
             android:name=".Resume_CalculaTron"
             android:exported="false" />
