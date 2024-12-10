@@ -68,18 +68,35 @@ class Game_Calculatron : AppCompatActivity() {
 
 
 
+
         val sharedPref = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
         val cuentaAtras = sharedPref.getString("cuentaAtras", "")
         val minimo = sharedPref.getString("minimo", "")
         val maximo = sharedPref.getString("maximo", "")
-//        val sumaCheck = sharedPref.getString("sumaChecked", "")
-//        val restaCheck = sharedPref.getString("restaChecked", "")
-//        val multiplicacionCheck = sharedPref.getString("multiplicacionChecked", "")
+        val sumaCheck = sharedPref.getBoolean("sumaChecked", false)
+        val restaCheck = sharedPref.getBoolean("restaChecked", false)
+        val multiplicacionCheck = sharedPref.getBoolean("multiplicacionChecked", false)
         val animacionSeleccionada = sharedPref.getString("animacionSeleccionada", "")
 
         //La información recibida en cuentaAtras pasa a ser el numero de cuenta atras
         cuentaAtras.toString()
         cuentaAtrasText.text = cuentaAtras
+        minimo.toString()
+        maximo.toString()
+        animacionSeleccionada.toString()
+
+
+        //Cada segundo que pasa se resta 1 a la cuenta atras
+        val timer = object : Runnable {
+            override fun run() {
+                cuentaAtrasText.text = (cuentaAtrasText.text.toString().toInt() - 1).toString()
+
+
+            }
+
+        }
+
+
 
 
 

@@ -47,7 +47,7 @@ class Config_CalculaTron : AppCompatActivity() {
 
 
 
-        val opciones = arrayOf("Sin animaciones", "Colores graduales", "Colores cambiantes")
+        val opciones = arrayOf("Sin animaciones", "Colores cambiantes")
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
 
         // Especifica el diseño a usar cuando se despliega la lista.
