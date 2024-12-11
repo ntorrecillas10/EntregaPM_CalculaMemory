@@ -3,6 +3,7 @@ package com.example.entregapm_calculamemory
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -35,9 +36,8 @@ class Game_Calculatron : AppCompatActivity() {
     private lateinit var botonReiniciarOperacion: AppCompatButton
     private lateinit var botonEliminar: AppCompatButton
     private lateinit var botonIgual: AppCompatButton
-
-
-
+    private lateinit var ct: CountDownTimer
+    private var contador: Long = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,31 +70,63 @@ class Game_Calculatron : AppCompatActivity() {
 
 
         val sharedPref = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
-        val cuentaAtras = sharedPref.getString("cuentaAtras", "")
-        val minimo = sharedPref.getString("minimo", "")
-        val maximo = sharedPref.getString("maximo", "")
+        val cuentaAtras = sharedPref.getInt("cuentaAtras", 0)
+        val minimo = sharedPref.getInt("minimo", 0)
+        val maximo = sharedPref.getInt("maximo", 0)
         val sumaCheck = sharedPref.getBoolean("sumaChecked", false)
         val restaCheck = sharedPref.getBoolean("restaChecked", false)
         val multiplicacionCheck = sharedPref.getBoolean("multiplicacionChecked", false)
         val animacionSeleccionada = sharedPref.getString("animacionSeleccionada", "")
+        var arrayOperaciones = mutableListOf<String>()
 
         //La información recibida en cuentaAtras pasa a ser el numero de cuenta atras
         cuentaAtras.toString()
-        cuentaAtrasText.text = cuentaAtras
+        cuentaAtrasText.text = cuentaAtras.toString()
+        contador = cuentaAtras.toLong()
         minimo.toString()
         maximo.toString()
         animacionSeleccionada.toString()
 
+        if (sumaCheck) {
+            arrayOperaciones.add("+")
+        }
+        if (restaCheck) {
+            arrayOperaciones.add("-")
+        }
+        if (multiplicacionCheck) {
+            arrayOperaciones.add("*")
+        }
+
 
         //Cada segundo que pasa se resta 1 a la cuenta atras
-        val timer = object : Runnable {
-            override fun run() {
-                cuentaAtrasText.text = (cuentaAtrasText.text.toString().toInt() - 1).toString()
-
-
+        ct = object : CountDownTimer(cuentaAtras.toLong() * 1000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                contador--
+                cuentaAtrasText.text = contador.toString()
             }
+            override fun onFinish() {
+                val intent = Intent(this@Game_Calculatron, Resume_CalculaTron::class.java)
+                startActivity(intent)
+            }
+        }.start()
 
-        }
+        //Sacamos dos numeros randoms entre el numero minimo y el numero maximo
+        val num1 = (minimo..maximo).random()
+        val num2 = (minimo..maximo).random()
+        //Sacamos una operacion aleatoria de la lista de operaciones
+        val operacion = arrayOperaciones.random()
+        //Creamos una operacion aleatoria
+        val operacionRandom = "$num1 $operacion $num2"
+        val operacionAleatoria = operacionRandom
+        //Mostramos la operacion aleatoria en la pantalla
+        operacionActual.text = operacionAleatoria
+        //Añadimos el resultado de la operacion a traves de los botones de numeros
+
+
+
+
+
+
 
 
 

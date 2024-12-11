@@ -81,9 +81,9 @@ class Config_CalculaTron : AppCompatActivity() {
             val animacionSeleccionada = spinnerAnimaciones.selectedItem.toString()
             // Guardar los valores en SharedPreferences
             val editor = sharedPref.edit()
-            editor.putString("cuentaAtras", cuentaAtrasText)
-            editor.putString("minimo", minimoText)
-            editor.putString("maximo", maximoText)
+            editor.putInt("cuentaAtras", cuentaAtrasText.toInt())
+            editor.putInt("minimo", minimoText.toInt())
+            editor.putInt("maximo", maximoText.toInt())
             editor.putBoolean("sumaChecked", sumaChecked)
             editor.putBoolean("restaChecked", restaChecked)
             editor.putBoolean("multiplicacionChecked", multiplicacionChecked)
@@ -92,10 +92,6 @@ class Config_CalculaTron : AppCompatActivity() {
 
             val intent = Intent(this, Game_Calculatron::class.java)
             startActivity(intent)
-
-
-
-
 
         }
 

@@ -100,6 +100,14 @@
         app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
         app:layout_constraintVertical_weight="1"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
+        android:text="Cuenta atrás"
+        android:textColor="@color/white"/>
+
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -110,7 +118,7 @@
         android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@drawable/bordesblancos_redondo"
-        android:hint="Cuenta atras"
+        android:hint="60"
         android:textAlignment="center"
         android:textColorHint="@color/white"
         android:inputType="numberDecimal"
@@ -120,15 +128,23 @@
         app:layout_constraintBottom_toTopOf="@id/minimoEdit"
         app:layout_constraintVertical_weight="2"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
+        android:text="Mínimo"
+        android:textColor="@color/white"/>
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/minimoEdit"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@drawable/bordesblancos_redondo"
-        android:hint="Mínimo"
+        android:hint="1"
         android:textAlignment="center"
         android:textColorHint="@color/white"
         android:inputType="numberDecimal"
@@ -138,6 +154,14 @@
         app:layout_constraintBottom_toTopOf="@id/textoOperaciones"
         app:layout_constraintVertical_weight="2"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/maximoEdit"
+        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
+        android:text="Máximo"
+        android:textColor="@color/white"/>
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/maximoEdit"
         android:layout_width="0dp"
@@ -145,7 +169,7 @@
         android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@drawable/bordesblancos_redondo"
-        android:hint="Máximo"
+        android:hint="20"
         android:textAlignment="center"
         android:textColorHint="@color/white"
         android:inputType="numberDecimal"
