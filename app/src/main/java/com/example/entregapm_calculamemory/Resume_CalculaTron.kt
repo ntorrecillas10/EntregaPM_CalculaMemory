@@ -23,7 +23,7 @@ class Resume_CalculaTron : AppCompatActivity() {
         botonVolver = binding.volver
 
         botonVolver.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Config_CalculaTron::class.java)
             startActivity(intent)
         }
 
