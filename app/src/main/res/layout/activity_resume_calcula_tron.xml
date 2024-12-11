@@ -77,4 +77,167 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinemedio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"/>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guidelineh1"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintBottom_toTopOf="@id/linear2"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/partidaAnteriorTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Partida Anterior"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/acertadasAnteriorTexto"/>
+
+            <TextView
+                android:id="@+id/acertadasAnteriorTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textSize="15dp"
+                android:text="Acertadas"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/partidaAnteriorTexto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fallidasAnteriorTexto"
+                app:layout_constraintBottom_toTopOf="@id/porcentajesAnteriorTexto"
+                android:gravity="center"/>
+            
+            <TextView
+                android:id="@+id/fallidasAnteriorTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Falladas"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/partidaAnteriorTexto"
+                app:layout_constraintStart_toEndOf="@id/acertadasAnteriorTexto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/porcentajesAnteriorTexto"
+                android:gravity="center"/>
+            
+            <TextView
+                android:id="@+id/porcentajesAnteriorTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textSize="17dp"
+                android:text="Pocentaje de aciertos: "
+                app:layout_constraintTop_toBottomOf="@id/acertadasAnteriorTexto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/linear1"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintBottom_toBottomOf="@id/guidelinemedio"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/totalTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Total"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/acertadasFinalTexto"/>
+
+            <TextView
+                android:id="@+id/acertadasFinalTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textSize="15dp"
+                android:text="Acertadas"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/totalTexto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fallidasFinalTexto"
+                app:layout_constraintBottom_toTopOf="@id/porcentajesTexto"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/fallidasFinalTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Falladas"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/totalTexto"
+                app:layout_constraintStart_toEndOf="@id/acertadasFinalTexto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/porcentajesTexto"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/porcentajesTexto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textSize="17dp"
+                android:text="Pocentaje de aciertos: "
+                app:layout_constraintTop_toBottomOf="@id/acertadasFinalTexto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
