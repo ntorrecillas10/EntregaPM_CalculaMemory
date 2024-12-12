@@ -4,12 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageButton
 import com.example.entregapm_calculamemory.databinding.ActivityGameCalculatronBinding
+import kotlin.math.sin
 
 class Game_Calculatron : AppCompatActivity() {
 
@@ -126,6 +128,11 @@ class Game_Calculatron : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                val sharedPrefResume = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+                val editor = sharedPrefResume.edit()
+                editor.putInt("acertadasEnviadas", acertadas)
+                editor.putInt("falladasEnviadas", falladas)
+                editor.apply()
                 val intent = Intent(this@Game_Calculatron, Resume_CalculaTron::class.java)
                 startActivity(intent)
             }
@@ -173,51 +180,68 @@ class Game_Calculatron : AppCompatActivity() {
             val operator = parts[1]
             var expectedResult: Int? = null
 
-            if (num1 != null && num2 != null) {
-                expectedResult = when (operator) {
-                    "+" -> num1 + num2
-                    "-" -> num1 - num2
-                    "*" -> num1 * num2
-                    "/" -> num1 / num2 // Handle division by zero if needed
-                    else -> null // Handle invalid operators
+            Log.d("Game_Calculatron", "Resultado: ${resultado[1]}")
+
+            if (resultado[1] == "") {
+                return@setOnClickListener
+            } else {
+
+                if (num1 != null && num2 != null) {
+                    expectedResult = when (operator) {
+                        "+" -> num1 + num2
+                        "-" -> num1 - num2
+                        "*" -> num1 * num2
+                        "/" -> num1 / num2 // Handle division by zero if needed
+                        else -> null // Handle invalid operators
+                    }
                 }
-            }
 
                 //Si el resultado de la operacion es igual al resultado de la operacion aleatoria sumamos uno a la cuenta de aciertos
-            if (resultado[1].toInt() == expectedResult) {
-                acertadas++
-                acertadasText.text = "Acertadas: $acertadas"
-            } else {
-                falladas++
-                falladasText.text = "Falladas: $falladas"
-                println(resultado[1].toInt())
-            }
-            //La cuenta actual se coloca en el resultado anterior
-            resultadoAnterior.text = operacionActual.text.toString()
-            //La cuenta siguiente se coloca en la operacion Actual
-            operacionActual.text = resultadoSiguiente.text
-            var numerito1 = (numeroMinimo..<numeroMaximo).random()
-            var numerito2 = (numeroMinimo..<numeroMaximo).random()
-            var operacioncita = arrayOperaciones.random()
-            var operacionAleatoriaNueva = if (numerito1 > numerito2) {
-                "$numerito1 $operacioncita $numerito2 ="
-            } else {
-                "$numerito2 $operacioncita $numerito1 ="
-            }
-            resultadoSiguiente.text = operacionAleatoriaNueva
-            num3 = (numeroMinimo..<numeroMaximo).random()
-            num4 = (numeroMinimo..<numeroMaximo).random()
+                if (resultado[1].toInt() == expectedResult) {
+                    acertadas++
+                    acertadasText.text = "Acertadas: $acertadas"
+                } else {
+                    falladas++
+                    falladasText.text = "Falladas: $falladas"
+                }
+                //La cuenta actual se coloca en el resultado anterior
+                resultadoAnterior.text = operacionActual.text.toString()
+                //La cuenta siguiente se coloca en la operacion Actual
+                operacionActual.text = resultadoSiguiente.text
+                var numerito1 = (numeroMinimo..<numeroMaximo).random()
+                var numerito2 = (numeroMinimo..<numeroMaximo).random()
+                var operacioncita = arrayOperaciones.random()
+                var operacionAleatoriaNueva = if (numerito1 > numerito2) {
+                    "$numerito1 $operacioncita $numerito2 ="
+                } else {
+                    "$numerito2 $operacioncita $numerito1 ="
+                }
+                resultadoSiguiente.text = operacionAleatoriaNueva
+                num3 = (numeroMinimo..<numeroMaximo).random()
+                num4 = (numeroMinimo..<numeroMaximo).random()
 
+            }
         }
 
+        botonReiniciarOperacion.setOnClickListener {
+            //Borramos el resultado escrito
+            var sinResultado = operacionActual.text.split("=")
+            if (sinResultado[1] != "") {
+                operacionActual.text = sinResultado[0]
+            }else{
+                return@setOnClickListener
+            }
+        }
 
+        botonEliminar.setOnClickListener {
+            //Si el ultimo caracter es un signo de igual, no podemos eliminar mas caracteres
+            if (operacionActual.text.last() == '=') {
+                return@setOnClickListener
+            }else{
+                operacionActual.text = operacionActual.text.dropLast(1)
+            }
 
-
-
-
-
-
-
+        }
 
 
         botonvolver.setOnClickListener {
@@ -234,6 +258,7 @@ class Game_Calculatron : AppCompatActivity() {
             userInput = ""
         }
     }
+
 
     override fun onStop() {
         super.onStop()

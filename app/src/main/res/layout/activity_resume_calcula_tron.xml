@@ -92,7 +92,9 @@
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintBottom_toTopOf="@id/linear2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bordesblancos_redondo"
+        android:layout_marginTop="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -120,12 +122,12 @@
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/partidaAnteriorTexto"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/fallidasAnteriorTexto"
+                app:layout_constraintEnd_toStartOf="@id/falladasAnteriorTexto"
                 app:layout_constraintBottom_toTopOf="@id/porcentajesAnteriorTexto"
                 android:gravity="center"/>
             
             <TextView
-                android:id="@+id/fallidasAnteriorTexto"
+                android:id="@+id/falladasAnteriorTexto"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text="Falladas"
@@ -168,7 +170,9 @@
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintBottom_toBottomOf="@id/guidelinemedio"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bordesblancos_redondo"
+        android:layout_marginTop="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -192,7 +196,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:textSize="15dp"
-                android:text="Acertadas"
+                android:text=""
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/totalTexto"
                 app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +208,7 @@
                 android:id="@+id/fallidasFinalTexto"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Falladas"
+                android:text=""
                 android:textSize="15dp"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/totalTexto"
@@ -218,7 +222,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:textSize="17dp"
-                android:text="Pocentaje de aciertos: "
+                android:text=""
                 app:layout_constraintTop_toBottomOf="@id/acertadasFinalTexto"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
