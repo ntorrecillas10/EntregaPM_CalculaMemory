@@ -35,6 +35,15 @@ class Resume_CalculaTron : AppCompatActivity() {
         falladasAnterior = binding.falladasAnteriorTexto
         porcentajesAnterior = binding.porcentajesAnteriorTexto
 
+        //Seteamos los datos de la partida anterior
+        val sharedPref1 = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+        val acertadasAnteriorTexto = sharedPref1.getInt("acertadasAnterior", 0)
+        val falladasAnteriorTexto = sharedPref1.getInt("falladasAnterior", 0)
+        val porcentajeAnteriorTexto = sharedPref1.getInt("porcentajeAnterior", 0)
+        acertadasAnterior.text = "Acertadas: $acertadasAnteriorTexto"
+        falladasAnterior.text = "Falladas: $falladasAnteriorTexto"
+        porcentajesAnterior.text = "Porcentaje de aciertos: $porcentajeAnteriorTexto%"
+
 
         //Recuperar los datos del intent
         val sharedPrefResume = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
@@ -56,25 +65,21 @@ class Resume_CalculaTron : AppCompatActivity() {
 
         //Cuando se juegue una partida nueva, la información se pasa a partida Anterior y se setea la nueva en Total
 
-
-
-
-
-
         botonVolver = binding.volver
 
         botonVolver.setOnClickListener {
             val intent = Intent(this, Config_CalculaTron::class.java)
             startActivity(intent)
             if (acertadasTexto != 0 || falladasTexto != 0) {
-                val sharedPref = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
-                val acertadasAnteriorValue = sharedPref.getInt("acertadasAnterior", 0)
-                val falladasAnteriorValue = sharedPref.getInt("falladasAnterior", 0)
-                val porcentajeAnteriorValue = sharedPref.getInt("porcentajeAnterior", 0)
-
-                acertadasAnterior.text = "Acertadas Anterior: $acertadasAnteriorValue"
-                falladasAnterior.text = "Falladas Anterior: $falladasAnteriorValue"
-                porcentajesAnterior.text = "Porcentaje de aciertos Anterior: $porcentajeAnteriorValue%"
+                val sharedPref1 = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+                val editor = sharedPref1.edit()
+                editor.putInt("acertadasAnterior", acertadasTexto)
+                editor.putInt("falladasAnterior", falladasTexto)
+                editor.putInt("porcentajeAnterior", porcentajeAciertos)
+                editor.apply()
+                acertadasAnterior.text = "Acertadas: $acertadasTexto"
+                falladasAnterior.text = "Falladas: $falladasTexto"
+                porcentajesAnterior.text = "Porcentaje de aciertos: $porcentajeAciertos%"
             }
 
 

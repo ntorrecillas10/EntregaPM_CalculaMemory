@@ -1,16 +1,24 @@
 package com.example.entregapm_calculamemory
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.ValueAnimator
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageButton
 import com.example.entregapm_calculamemory.databinding.ActivityGameCalculatronBinding
+import java.util.Timer
+import java.util.TimerTask
+import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.math.sin
 
 class Game_Calculatron : AppCompatActivity() {
@@ -43,11 +51,24 @@ class Game_Calculatron : AppCompatActivity() {
     private var userInput = ""
     private var acertadas = 0
     private var falladas = 0
+    private val colors = arrayOf(
+        //Añadimos colores graduales del rojo al verde
+        Color.RED,
+        Color.rgb(255, 192, 203),
+        Color.rgb(255, 165, 0),
+        Color.rgb(255, 105, 180),
+        Color.rgb(128, 0, 128),
+        Color.YELLOW,
+        //Colores del amarillo al verde
+        Color.rgb(154, 205, 50),
+        Color.rgb(34, 139, 34),
+        Color.rgb(0, 128, 0),
+        Color.GREEN,
+        //Colores del verde al rojo
+        Color.rgb(0, 128, 0),
 
-    private var num1 = (numeroMinimo..numeroMaximo).random()
-    private var num2 = (numeroMinimo..numeroMaximo).random()
-    private var num3 = (numeroMinimo..numeroMaximo).random()
-    private var num4 = (numeroMinimo..numeroMaximo).random()
+    )
+    private var colorIndex = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,6 +122,34 @@ class Game_Calculatron : AppCompatActivity() {
         val multiplicacionCheck = sharedPref.getBoolean("multiplicacionChecked", false)
         val animacionSeleccionada = sharedPref.getString("animacionSeleccionada", "")
         var arrayOperaciones = mutableListOf<String>()
+
+        if (animacionSeleccionada == "Colores cambiantes") {
+            val timer = Timer()
+            timer.schedule(object : TimerTask() {
+                override fun run() {
+                    runOnUiThread { // Update UI on the main thread
+                        cuentaAtrasText.setTextColor(colors[colorIndex])
+                        colorIndex = (colorIndex + 1) % colors.size
+                    }
+                }
+            }, 0, 1000) // Start immediately, repeat every 1000ms (1 second)
+        }
+
+        if (animacionSeleccionada == "Movimiento") {
+            val propertyValuesHolder = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, -100f, 100f)
+            val propertyValuesHolder2 = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, -10f, 40f,40f,-10f)
+            val objectAnimator = ObjectAnimator.ofPropertyValuesHolder(cuentaAtrasText, propertyValuesHolder, propertyValuesHolder2)
+            objectAnimator.duration = 2000
+            objectAnimator.repeatCount = ValueAnimator.INFINITE
+            objectAnimator.repeatMode = ValueAnimator.REVERSE
+            objectAnimator.start()
+        }
+
+
+        var num1 = (numeroMinimo..numeroMaximo).random()
+        var num2 = (numeroMinimo..numeroMaximo).random()
+        var num3 = (numeroMinimo..numeroMaximo).random()
+        var num4 = (numeroMinimo..numeroMaximo).random()
 
         //La información recibida en cuentaAtras pasa a ser el numero de cuenta atras
         cuentaAtras.toString()
