@@ -276,7 +276,7 @@ class Game_Calculatron : AppCompatActivity() {
             //Borramos el resultado escrito
             var sinResultado = operacionActual.text.split("=")
             if (sinResultado[1] != "") {
-                operacionActual.text = sinResultado[0]
+                operacionActual.text = sinResultado[0]+"="
             }else{
                 return@setOnClickListener
             }

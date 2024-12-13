@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.60"/>
+        app:layout_constraintGuide_percent="0.65"/>
 
     <TextView
         android:id="@+id/textoConfig"
@@ -91,14 +91,14 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="Configuración"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:textSize="22dp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toTopOf="@id/guidelineh1"
         app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="2"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -117,6 +117,7 @@
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:textColor="@color/white"
+        android:maxLength="3"
         android:background="@drawable/bordesblancos_redondo"
         android:hint="60"
         android:textAlignment="center"
@@ -141,6 +142,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
+        android:maxLength="2"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@drawable/bordesblancos_redondo"
@@ -168,6 +170,7 @@
         android:layout_height="0dp"
         android:textSize="20dp"
         android:textColor="@color/white"
+        android:maxLength="2"
         android:background="@drawable/bordesblancos_redondo"
         android:hint="20"
         android:textAlignment="center"
@@ -184,12 +187,13 @@
         android:layout_height="0dp"
         android:text="Operaciones seleccionadas"
         android:textSize="15dp"
+        android:gravity="bottom"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/minimoEdit"
         app:layout_constraintBottom_toBottomOf="@id/checkSuma"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1.5"/>
 
     <CheckBox
         android:id="@+id/checkSuma"
@@ -203,7 +207,7 @@
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
         app:layout_constraintEnd_toStartOf="@id/checkResta"
         app:layout_constraintBottom_toTopOf="@id/textoAnimaciones"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1.5"/>
 
     <CheckBox
         android:id="@+id/checkResta"
@@ -244,7 +248,7 @@
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/checkSuma"
         app:layout_constraintBottom_toTopOf="@id/spinnerAnimaciones"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1.5"/>
 
     <Spinner
         android:id="@+id/spinnerAnimaciones"
@@ -258,7 +262,7 @@
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
         app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineMedio"
-        app:layout_constraintVertical_weight="1"
+        app:layout_constraintVertical_weight="1.5"
         />
 
     <androidx.appcompat.widget.AppCompatButton
