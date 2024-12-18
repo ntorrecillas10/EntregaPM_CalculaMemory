@@ -76,18 +76,20 @@ class Config_CalculaTron : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //Borramos los 0s que aparezcan al principio
-
-            var minimoText = minimo.text.toString()
-
-            var maximoText = maximo.text.toString()
-
-            if (minimoText.isEmpty()){
-                minimoText = 1.toString()
+            var minimoText = minimo.text?.toString()
+            if (minimo.text.toString().length>1) {
+                minimoText = minimo.text?.trimStart('0').toString()
+            }else if (minimoText!!.isEmpty()){
+                minimoText = "1"
             }
-            if (maximoText.isEmpty()){
-                maximoText = 20.toString()
+
+            var maximoText = maximo.text?.toString()
+            if (maximo.text.toString().length>1) {
+                maximoText = maximo.text?.trimStart('0').toString()
+            } else if (maximoText!!.isEmpty()){
+                maximoText = "20"
             }
+
             //Si el maximo es 0 no se puede jugar
             if (maximoText.contains("0") && maximoText< 1.toString()){
                 maximo.error = "El maximo no puede ser 0"
