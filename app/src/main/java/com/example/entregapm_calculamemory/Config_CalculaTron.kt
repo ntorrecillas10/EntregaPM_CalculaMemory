@@ -68,9 +68,21 @@ class Config_CalculaTron : AppCompatActivity() {
             // Obtener los valores de los campos de texto
             val cuentaAtrasText = cuentaAtras.text.toString()
 
-            val minimoText = minimo.text.toString()
+            var minimoText = minimo.text.toString()
 
-            val maximoText = maximo.text.toString()
+            var maximoText = maximo.text.toString()
+
+            if (minimoText.isEmpty()){
+                minimoText = 1.toString()
+            }
+            if (maximoText.isEmpty()){
+                maximoText = 20.toString()
+            }
+
+            if (minimoText>maximoText){
+                minimo.error = "El minimo no puede ser mayor que el maximo"
+                return@setOnClickListener
+            }
 
             // Obtener los valores de los checkboxes
             val sumaChecked = checkSuma.isChecked
