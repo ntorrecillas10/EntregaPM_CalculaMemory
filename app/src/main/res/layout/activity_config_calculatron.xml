@@ -195,6 +195,7 @@
         app:layout_constraintBottom_toBottomOf="@id/checkSuma"
         app:layout_constraintVertical_weight="1.5"/>
 
+
     <CheckBox
         android:id="@+id/checkSuma"
         android:layout_width="0dp"

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageButton
@@ -78,6 +79,11 @@ class Config_CalculaTron : AppCompatActivity() {
             if (maximoText.isEmpty()){
                 maximoText = 20.toString()
             }
+            //Si el maximo es 0 no se puede jugar
+            if (maximoText == "0"){
+                maximo.error = "El maximo no puede ser 0"
+                return@setOnClickListener
+            }
 
             if (minimoText>maximoText){
                 minimo.error = "El minimo no puede ser mayor que el maximo"
@@ -88,6 +94,12 @@ class Config_CalculaTron : AppCompatActivity() {
             val sumaChecked = checkSuma.isChecked
             val restaChecked = checkResta.isChecked
             val multiplicacionChecked = checkMultiplicacion.isChecked
+
+            //Si no se ha seleccionado ninguna operacion no se puede jugar
+            if (!sumaChecked && !restaChecked && !multiplicacionChecked){
+                Toast.makeText(this, "Debes seleccionar al menos una operacion", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Obtener el valor seleccionado en el Spinner
             val animacionSeleccionada = spinnerAnimaciones.selectedItem.toString()
