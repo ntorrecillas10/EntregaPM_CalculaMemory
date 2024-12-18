@@ -5,22 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Config_CalculaTron"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".Config_CalculaTron">
 
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/volver"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/textoSuperior"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineh1"
-        android:scaleType="fitCenter"
         android:background="@color/black"
+        android:scaleType="fitCenter"
         android:src="@drawable/flecha_atras"
-        app:layout_constraintHorizontal_weight="1"/>
+        app:layout_constraintBottom_toBottomOf="@id/guidelineh1"
+        app:layout_constraintEnd_toStartOf="@id/textoSuperior"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -29,85 +29,84 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="Calcula Tron"
-        android:textSize="30dp"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@id/messi"
-        app:layout_constraintStart_toEndOf="@+id/volver"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="@id/guidelineh1"
+        app:layout_constraintBottom_toTopOf="@id/guidelineh1"
+        app:layout_constraintEnd_toStartOf="@id/messi"
         app:layout_constraintHorizontal_weight="8"
-        app:layout_constraintBottom_toTopOf="@id/guidelineh1"/>
+        app:layout_constraintStart_toEndOf="@+id/volver"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Space
         android:id="@+id/messi"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toEndOf="@id/textoSuperior"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineh1"
-        android:scaleType="fitCenter"
         android:background="@color/black"
-        app:layout_constraintHorizontal_weight="1"/>
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineh1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/textoSuperior"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelinev1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelinev2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"/>
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineh1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08"/>
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineh2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85"/>
+        app:layout_constraintGuide_percent="0.85" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMedio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65"/>
+        app:layout_constraintGuide_percent="0.65" />
 
     <TextView
         android:id="@+id/textoConfig"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Configuración"
-        android:layout_marginTop="10dp"
-        android:textSize="22dp"
         android:textColor="@color/white"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toTopOf="@id/guidelineh1"
-        app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
-        app:layout_constraintVertical_weight="2"/>
+        app:layout_constraintVertical_weight="2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
         android:text="Cuenta atrás"
-        android:textColor="@color/white"/>
-
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/cuentaAtras"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1" />
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -115,85 +114,87 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:maxLength="3"
         android:background="@drawable/bordesblancos_redondo"
         android:hint="60"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@id/guidelinev1"
-        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
-        app:layout_constraintTop_toBottomOf="@id/textoConfig"
+        android:maxLength="3"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/minimoEdit"
-        app:layout_constraintVertical_weight="2"/>
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintStart_toEndOf="@id/guidelinev1"
+        app:layout_constraintTop_toBottomOf="@id/textoConfig"
+        app:layout_constraintVertical_weight="2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
         android:text="Mínimo"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/minimoEdit"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:maxLength="2"
-        android:textSize="20dp"
-        android:textColor="@color/white"
         android:background="@drawable/bordesblancos_redondo"
         android:hint="1"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:inputType="numberDecimal"
+        android:maxLength="2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/textoOperaciones"
+        app:layout_constraintEnd_toStartOf="@id/maximoEdit"
+        android:layout_marginEnd="5dp"
         app:layout_constraintStart_toEndOf="@id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/cuentaAtras"
-        app:layout_constraintEnd_toStartOf="@id/maximoEdit"
-        app:layout_constraintBottom_toTopOf="@id/textoOperaciones"
-        app:layout_constraintVertical_weight="2"/>
+        app:layout_constraintVertical_weight="2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/maximoEdit"
-        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
         android:text="Máximo"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/minimoEdit"
+        app:layout_constraintStart_toStartOf="@id/maximoEdit" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/maximoEdit"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:maxLength="2"
         android:background="@drawable/bordesblancos_redondo"
         android:hint="20"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:inputType="numberDecimal"
+        android:layout_marginStart="5dp"
+        android:maxLength="2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/textoOperaciones"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
-        app:layout_constraintTop_toTopOf="@id/minimoEdit"
         app:layout_constraintStart_toEndOf="@+id/minimoEdit"
-        app:layout_constraintBottom_toTopOf="@id/textoOperaciones"/>
+        app:layout_constraintTop_toTopOf="@id/minimoEdit" />
 
     <TextView
         android:id="@+id/textoOperaciones"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Operaciones seleccionadas"
-        android:textSize="15dp"
         android:gravity="bottom"
+        android:text="Operaciones seleccionadas"
         android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/minimoEdit"
-        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
-        app:layout_constraintVertical_weight="1.5"/>
+        app:layout_constraintVertical_weight="1.5" />
 
 
     <CheckBox
@@ -201,28 +202,28 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:checked="true"
         android:text="Suma"
         android:textColor="@color/white"
-        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/textoAnimaciones"
+        app:layout_constraintEnd_toStartOf="@id/checkResta"
         app:layout_constraintStart_toStartOf="@id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
-        app:layout_constraintEnd_toStartOf="@id/checkResta"
-        app:layout_constraintBottom_toTopOf="@id/textoAnimaciones"
-        app:layout_constraintVertical_weight="1.5"/>
+        app:layout_constraintVertical_weight="1.5" />
 
     <CheckBox
         android:id="@+id/checkResta"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:checked="true"
         android:text="Resta"
         android:textColor="@color/white"
-        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
+        app:layout_constraintEnd_toStartOf="@id/checkMultiplicacion"
         app:layout_constraintStart_toEndOf="@id/checkSuma"
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
-        app:layout_constraintEnd_toStartOf="@id/checkMultiplicacion"
-        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1" />
 
     <CheckBox
         android:id="@+id/checkMultiplicacion"
@@ -231,25 +232,25 @@
         android:layout_marginTop="10dp"
         android:text="Multiplicacion"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
+        app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@id/checkResta"
         app:layout_constraintTop_toBottomOf="@id/textoOperaciones"
-        app:layout_constraintEnd_toStartOf="@id/guidelinev2"
-        app:layout_constraintBottom_toBottomOf="@id/checkSuma"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/textoAnimaciones"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Animación"
         android:layout_marginTop="10dp"
-        android:textSize="15dp"
+        android:text="Animación"
         android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/spinnerAnimaciones"
         app:layout_constraintEnd_toStartOf="@id/guidelinev2"
         app:layout_constraintStart_toEndOf="@+id/guidelinev1"
         app:layout_constraintTop_toBottomOf="@id/checkSuma"
-        app:layout_constraintBottom_toTopOf="@id/spinnerAnimaciones"
-        app:layout_constraintVertical_weight="1.5"/>
+        app:layout_constraintVertical_weight="1.5" />
 
     <Spinner
         android:id="@+id/spinnerAnimaciones"
@@ -259,59 +260,22 @@
         android:background="@color/white2"
         android:textAlignment="center"
         android:theme="@style/YourSpinnerStyle"
-        app:layout_constraintTop_toBottomOf="@id/textoAnimaciones"
-        app:layout_constraintStart_toStartOf="@id/guidelinev1"
-        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineMedio"
-        app:layout_constraintVertical_weight="1.5"
-        />
+        app:layout_constraintEnd_toEndOf="@id/guidelinev2"
+        app:layout_constraintStart_toStartOf="@id/guidelinev1"
+        app:layout_constraintTop_toBottomOf="@id/textoAnimaciones"
+        app:layout_constraintVertical_weight="1.5" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/guardar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineh2"
-        app:layout_constraintStart_toEndOf="@id/guidelinev1"
-        app:layout_constraintEnd_toStartOf="@id/guidelinev2"
-        android:text="Guardar configuración"
         android:background="@drawable/bordesblancos_redondo"
+        android:text="Guardar configuración"
         android:textColor="@color/white"
-        />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        app:layout_constraintEnd_toStartOf="@id/guidelinev2"
+        app:layout_constraintStart_toEndOf="@id/guidelinev1"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineh2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
