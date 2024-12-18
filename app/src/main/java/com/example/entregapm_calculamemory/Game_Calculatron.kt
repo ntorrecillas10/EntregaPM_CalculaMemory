@@ -257,8 +257,8 @@ class Game_Calculatron : AppCompatActivity() {
                 resultadoAnterior.text = operacionActual.text.toString()
                 //La cuenta siguiente se coloca en la operacion Actual
                 operacionActual.text = resultadoSiguiente.text
-                var numerito1 = (numeroMinimo..<numeroMaximo).random()
-                var numerito2 = (numeroMinimo..<numeroMaximo).random()
+                var numerito1 = (numeroMinimo..numeroMaximo).random()
+                var numerito2 = (numeroMinimo..numeroMaximo).random()
                 var operacioncita = arrayOperaciones.random()
                 var operacionAleatoriaNueva = if (numerito1 > numerito2) {
                     "$numerito1 $operacioncita $numerito2 ="
@@ -266,8 +266,8 @@ class Game_Calculatron : AppCompatActivity() {
                     "$numerito2 $operacioncita $numerito1 ="
                 }
                 resultadoSiguiente.text = operacionAleatoriaNueva
-                num3 = (numeroMinimo..<numeroMaximo).random()
-                num4 = (numeroMinimo..<numeroMaximo).random()
+                num3 = (numeroMinimo..numeroMaximo).random()
+                num4 = (numeroMinimo..numeroMaximo).random()
 
             }
         }
