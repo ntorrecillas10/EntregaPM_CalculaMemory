@@ -114,7 +114,6 @@ class Config_CalculaTron : AppCompatActivity() {
 
 
 
-
     }
 
     override fun onResume() {
