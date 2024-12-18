@@ -65,9 +65,18 @@ class Config_CalculaTron : AppCompatActivity() {
 
 
 
+
         botonGuardar.setOnClickListener {
             // Obtener los valores de los campos de texto
-            val cuentaAtrasText = cuentaAtras.text.toString()
+            val cuentaAtrasText = cuentaAtras.text?.trimStart('0').toString()
+
+            //Si el contador es 0 no se puede jugar
+            if (cuentaAtrasText.contains("0") && cuentaAtrasText< 1.toString()){
+                cuentaAtras.error = "El contador no puede ser menor a 1"
+                return@setOnClickListener
+            }
+
+            //Borramos los 0s que aparezcan al principio
 
             var minimoText = minimo.text.toString()
 
@@ -80,8 +89,13 @@ class Config_CalculaTron : AppCompatActivity() {
                 maximoText = 20.toString()
             }
             //Si el maximo es 0 no se puede jugar
-            if (maximoText == "0"){
+            if (maximoText.contains("0") && maximoText< 1.toString()){
                 maximo.error = "El maximo no puede ser 0"
+                return@setOnClickListener
+            }
+
+            if (minimoText.contains(".") || maximoText.contains(".") || cuentaAtrasText.contains(".") || cuentaAtrasText.contains(",") || minimoText.contains(",") || maximoText.contains(",")){
+                Toast.makeText(this, "Las operaciones no pueden contener decimales", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
